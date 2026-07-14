@@ -1,0 +1,33 @@
+{
+  "name": "pixagentur-marketplace",
+  "owner": {
+    "name": "pixagentur",
+    "email": "christoph.beben79@gmail.com",
+    "url": "https://pixagentur.de"
+  },
+  "metadata": {
+    "description": "PIXAGENTUR Claude Code Plugin Marketplace — SEO- und Webdesign-Skills."
+  },
+  "plugins": [
+    {
+      "name": "seo-ranking-experte",
+      "description": "Agiert wie eine erfahrene SEO-Agentur: analysiert eine URL oder ganze Website, vergibt einen Score (0-1.000), liefert priorisierte Handlungsempfehlungen, fertige Text-Swap-Vorschläge und erzeugt automatisch einen PDF-Report.",
+      "version": "1.1.1",
+      "source": "./plugins/seo-ranking-experte",
+      "strict": false,
+      "skills": [
+        "./skills/seo-ranking-experte"
+      ]
+    },
+    {
+      "name": "webdesign-brief",
+      "description": "Verpflichtendes Intake-Briefing für jeden neuen Webdesign-Auftrag: fragt Branche, Kunde, Farben, Hero-Layout, Animationen, Hintergrund, Bildmaterial, Referenzen, Tech-Stack, Umfang, Conversion-Ziel und Sprache ab, bevor Design/Code entsteht.",
+      "version": "1.1.1",
+      "source": "./plugins/webdesign-brief",
+      "strict": false,
+      "skills": [
+        "./skills/webdesign-brief"
+      ]
+    }
+  ]
+}

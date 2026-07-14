@@ -1,0 +1,11 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "webdesign-brief",
+  "version": "1.1.1",
+  "description": "Verpflichtendes Intake-Briefing für jeden neuen Webdesign-Auftrag: fragt Branche, Kunde, Farben, Hero-Layout, Animationen, Hintergrund, Bildmaterial, Referenzen, Tech-Stack, Umfang, Conversion-Ziel und Sprache ab, bevor Design/Code entsteht.",
+  "author": {
+    "name": "pixagentur",
+    "email": "christoph.beben79@gmail.com",
+    "url": "https://pixagentur.de"
+  }
+}
