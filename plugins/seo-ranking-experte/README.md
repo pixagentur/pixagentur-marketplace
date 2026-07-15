@@ -1,6 +1,6 @@
 # SEO Ranking Experte – Claude Skill
 
-**Version: 1.1.0** ([Änderungshistorie](./CHANGELOG.md))
+**Version: 1.2.0** ([Änderungshistorie](./CHANGELOG.md))
 
 Ein Claude-Skill, der wie eine erfahrene SEO-Agentur arbeitet: Man übergibt eine einzelne URL
 oder eine ganze Website, und der Skill liefert eine kompakte SEO-Analyse, einen Gesamt-Score

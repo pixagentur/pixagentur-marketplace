@@ -1,12 +1,12 @@
 ---
 name: seo-ranking-experte
-version: 1.1.0
+version: 1.2.0
 description: Agiert wie eine erfahrene SEO-Agentur, der eine einzelne URL oder eine ganze Website übergeben wird, um deren Google-Ranking nachhaltig zu verbessern. Führt eine vollständige, aber kompakte SEO-Analyse durch (technisches SEO, Content-Qualität, E-E-A-T, Core Web Vitals, Structured Data, KI-Suche/GEO), vergibt einen Gesamt-Score (0-1.000 Punkte, z.B. "837 von 1.000") mit Diagramm, liefert priorisierte Handlungsempfehlungen und fertige Text-Ersetzungsvorschläge im Originalstil der Seite, die nicht als KI-generiert erkennbar sind, und erzeugt am Ende immer automatisch einen speicherbaren PDF-Report. Nutze diesen Skill immer, wenn Nutzer:innen eine Website oder URL SEO-technisch analysieren, das Google-Ranking verbessern, einen SEO-Audit erstellen, Content für Suchmaschinen optimieren oder SEO-Texte umschreiben/austauschen möchten – auch bei indirekten Formulierungen wie "warum rankt meine Seite nicht", "Website für Google verbessern", "Text SEO-fit machen" oder "Content-Audit".
 ---
 
 # SEO Ranking Experte
 
-**Skill-Version: 1.1.0** – Änderungshistorie siehe `CHANGELOG.md`. Versionierungsregeln (wann
+**Skill-Version: 1.2.0** – Änderungshistorie siehe `CHANGELOG.md`. Versionierungsregeln (wann
 Major/Minor/Patch erhöht wird) stehen in `references/20-pflege-und-versionierung.md`.
 
 Dieser Skill lässt Claude wie eine renommierte SEO-Agentur arbeiten, der eine URL oder Website
@@ -86,6 +86,13 @@ Analysiere das gesammelte Material gegen die Kriterien in:
 - `references/03-audit-checkliste.md` (die konkrete, kategorisierte Prüfliste mit Ampel-Logik,
   die auf diesem Regelwerk aufbaut)
 
+Beim Durchgehen der Checkliste **sowohl 🔴/🟡-Mängel als auch konkret erfüllte (🟢) Punkte
+notieren** – nicht nur die Ampel pro Kategorie, sondern das einzelne, tatsächlich beobachtete
+Kriterium (z. B. "robots.txt korrekt konfiguriert", nicht nur "Kategorie A: 🟢"). Die erfüllten
+Punkte fließen in Schritt 7 in den PDF-Abschnitt "Was bereits gut läuft" ein – wie bei den
+Mängeln gilt: nur tatsächlich beobachtete Fakten, keine pauschalen Standardsätze ohne Bezug zur
+analysierten Seite.
+
 ### Schritt 3 – Kompakter Analyse-Report
 
 Format (kurz & knackig, keine Doktorarbeit):
@@ -158,7 +165,12 @@ erzeugt – nicht nur auf Nachfrage. Vorgehen:
 
 1. Alle Ergebnisse aus Schritt 3–6 in das Datenschema von
    `scripts/generate_report_pdf.py` (`build_report`) überführen: Gesamtscore, Kategorie-Punkte,
-   Zusammenfassung, priorisierte Empfehlungen, Text-Swap-Liste, Annahmen/Lücken.
+   Zusammenfassung, priorisierte Empfehlungen, Text-Swap-Liste, Annahmen/Lücken – **und die in
+   Schritt 2 notierten erfüllten Punkte als `"staerken"`** (Liste von
+   `{"kategorie": str, "befund": str}`, gruppiert nach Checklisten-Kategorie). Erscheint im PDF
+   als eigener Abschnitt "Was bereits gut läuft" direkt nach der Zusammenfassung. Leer lassen
+   (`[]`), wenn eine Kategorie keine nennenswerten erfüllten Punkte hatte – nicht mit
+   Plattitüden auffüllen.
 2. Für die Text-Swap-Einträge korrekt zwischen den zwei Typen unterscheiden:
    - `"typ": "ersetzen"` mit `ist_text` + `neu_text`, wenn ein bestehender Text ausgetauscht wird.
    - `"typ": "neu"` **ohne** `ist_text`, wenn ein komplett neuer Textbaustein ergänzt wird. Das

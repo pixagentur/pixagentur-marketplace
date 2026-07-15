@@ -7,6 +7,15 @@ Alle nennenswerten Änderungen an diesem Skill werden hier dokumentiert. Format 
 Die genauen Regeln, wann welche Stelle der Versionsnummer erhöht wird, stehen in
 `references/20-pflege-und-versionierung.md` (Abschnitt "Skill-Versionierung").
 
+## [1.2.0] – 2026-07-15
+
+### Hinzugefügt
+- Neuer PDF-Abschnitt "Was bereits gut läuft": listet bereits erfüllte/positive Befunde aus der
+  Audit-Checkliste, gruppiert nach Kategorie (`build_report`, neues optionales Datenfeld
+  `"staerken"`, Funktion `_positive_findings_block` in `scripts/generate_report_pdf.py`).
+- Schritt 2 in `SKILL.md` erweitert: neben Mängeln jetzt auch konkret erfüllte Checklisten-
+  Punkte notieren, als Grundlage für den neuen PDF-Abschnitt.
+
 ## [1.1.0] – 2026-07-14
 
 ### Hinzugefügt

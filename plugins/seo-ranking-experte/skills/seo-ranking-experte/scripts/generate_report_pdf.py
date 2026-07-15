@@ -34,7 +34,7 @@ from datetime import datetime
 # Muss synchron mit dem `version:`-Feld im Frontmatter von SKILL.md und mit CHANGELOG.md
 # gehalten werden (siehe references/20-pflege-und-versionierung.md, Abschnitt
 # "Skill-Versionierung").
-SKILL_VERSION = "1.1.0"
+SKILL_VERSION = "1.2.0"
 
 try:
     import matplotlib
@@ -320,6 +320,40 @@ def _text_swap_table(swaps, styles):
     return KeepTogether(flowables[:1]) and flowables  # einzelne Eintraege duerfen umbrechen
 
 
+def _positive_findings_block(staerken, styles):
+    """
+    Baut den Abschnitt mit bereits erfuellten/positiven Befunden, gruppiert nach Kategorie.
+    staerken: Liste von Dicts {"kategorie": str, "befund": str}.
+    Gibt eine Liste von Flowables zurueck (leer, wenn keine Staerken vorhanden).
+    """
+    if not staerken:
+        return []
+
+    # Nach Kategorie gruppieren, Reihenfolge des ersten Auftretens beibehalten
+    gruppen = {}
+    reihenfolge = []
+    for eintrag in staerken:
+        kategorie = eintrag.get("kategorie", "Allgemein")
+        if kategorie not in gruppen:
+            gruppen[kategorie] = []
+            reihenfolge.append(kategorie)
+        gruppen[kategorie].append(eintrag.get("befund", ""))
+
+    flowables = [Paragraph("Was bereits gut läuft", styles["SectionHeading"])]
+    flowables.append(Paragraph(
+        "Diese Punkte erfüllen die Kriterien bereits und sollten bei künftigen Änderungen "
+        "beibehalten werden.", styles["BodySmallGrey"]))
+    flowables.append(Spacer(1, 6))
+    for kategorie in reihenfolge:
+        flowables.append(Paragraph(kategorie, styles["SubHeading"]))
+        for befund in gruppen[kategorie]:
+            flowables.append(Paragraph(
+                f'<font color="{COLOR_GREEN}">✓</font>&nbsp;&nbsp;{befund}',
+                styles["BodySmall"]))
+        flowables.append(Spacer(1, 4))
+    return flowables
+
+
 def build_report(data, output_path):
     """
     Baut den vollstaendigen PDF-Report.
@@ -333,6 +367,8 @@ def build_report(data, output_path):
         "einordnung": str,
         "kategorien": [{"name": str, "erreicht": number, "max": number}, ...],
         "zusammenfassung": {"groesstes_risiko": str, "groesster_hebel": str},
+        "staerken": [{"kategorie": str, "befund": str}, ...] (optional - bereits erfuellte
+            Kriterien/positive Befunde aus der Audit-Checkliste, gruppiert nach Kategorie),
         "empfehlungen": {
             "kritisch": [{"titel": str, "begruendung": str, "aufwand": str}, ...],
             "wichtig": [...],
@@ -397,6 +433,11 @@ def build_report(data, output_path):
             story.append(Paragraph(
                 f"<b>Größter Hebel:</b> {zusammenfassung['groesster_hebel']}",
                 styles["BodySmall"]))
+
+    # --- Bereits erfuellte/positive Befunde -----------------------------------
+    story.append(Spacer(1, 10))
+    for flowable in _positive_findings_block(data.get("staerken", []), styles):
+        story.append(flowable)
 
     # --- Handlungsempfehlungen ----------------------------------------------
     empfehlungen = data.get("empfehlungen", {})
@@ -577,6 +618,16 @@ EXAMPLE_DATA = {
         "groesstes_risiko": "Fehlende Autor:innen-Angaben bei Ratgeberinhalten schwächen E-E-A-T.",
         "groesster_hebel": "Title-Tags und H1 klarer auf Suchintention ausrichten.",
     },
+    "staerken": [
+        {"kategorie": "Crawling & Indexierung",
+         "befund": "Seite liefert HTTP 200, robots.txt und XML-Sitemap sind korrekt eingerichtet."},
+        {"kategorie": "Crawling & Indexierung",
+         "befund": "Kanonische URL ist gesetzt und verweist korrekt auf sich selbst."},
+        {"kategorie": "Page Experience/CWV",
+         "befund": "LCP und CLS liegen laut PageSpeed-Insights-Live-Check im grünen Bereich."},
+        {"kategorie": "Spam-Freiheit",
+         "befund": "Keine Cloaking-, Doorway- oder unnatürlichen Linkmuster erkennbar."},
+    ],
     "empfehlungen": {
         "kritisch": [],
         "wichtig": [
