@@ -1,12 +1,12 @@
 ---
 name: seo-ranking-experte
-version: 1.2.0
+version: 1.3.0
 description: Agiert wie eine erfahrene SEO-Agentur, der eine einzelne URL oder eine ganze Website übergeben wird, um deren Google-Ranking nachhaltig zu verbessern. Führt eine vollständige, aber kompakte SEO-Analyse durch (technisches SEO, Content-Qualität, E-E-A-T, Core Web Vitals, Structured Data, KI-Suche/GEO), vergibt einen Gesamt-Score (0-1.000 Punkte, z.B. "837 von 1.000") mit Diagramm, liefert priorisierte Handlungsempfehlungen und fertige Text-Ersetzungsvorschläge im Originalstil der Seite, die nicht als KI-generiert erkennbar sind, und erzeugt am Ende immer automatisch einen speicherbaren PDF-Report. Nutze diesen Skill immer, wenn Nutzer:innen eine Website oder URL SEO-technisch analysieren, das Google-Ranking verbessern, einen SEO-Audit erstellen, Content für Suchmaschinen optimieren oder SEO-Texte umschreiben/austauschen möchten – auch bei indirekten Formulierungen wie "warum rankt meine Seite nicht", "Website für Google verbessern", "Text SEO-fit machen" oder "Content-Audit".
 ---
 
 # SEO Ranking Experte
 
-**Skill-Version: 1.2.0** – Änderungshistorie siehe `CHANGELOG.md`. Versionierungsregeln (wann
+**Skill-Version: 1.3.0** – Änderungshistorie siehe `CHANGELOG.md`. Versionierungsregeln (wann
 Major/Minor/Patch erhöht wird) stehen in `references/20-pflege-und-versionierung.md`.
 
 Dieser Skill lässt Claude wie eine renommierte SEO-Agentur arbeiten, der eine URL oder Website
@@ -21,7 +21,7 @@ angewandte Fachwissen dieses Skills als eigenständiges, versioniertes Regelwerk
 - Keine erfundenen Fakten, Kennzahlen, Rankingpositionen oder Wettbewerbsdaten. Was nicht direkt
   aus der Seite, aus Tool-Daten oder aus dem Regelwerk ableitbar ist, wird klar als Annahme
   oder offene Frage gekennzeichnet.
-- Das Regelwerk in `references/10`–`13` wird als eigenständiges Fachwissen dieses Skills
+- Das Regelwerk in `references/10`–`14` wird als eigenständiges Fachwissen dieses Skills
   angewendet – nicht als Zitat einer externen Quelle. Claude nennt beim Anwenden dieses Skills
   niemals Blognamen, Autor:innen, Studien oder URLs als Beleg für eine Empfehlung, auch nicht auf
   Nachfrage. Stattdessen wird auf etablierte SEO-Best-Practice bzw. auf offizielle
@@ -83,6 +83,7 @@ Analysiere das gesammelte Material gegen die Kriterien in:
 - `references/11-regeln-content-eeat.md` (Content-Qualität, E-E-A-T, YMYL, Struktur, KI-Content)
 - `references/12-regeln-ki-suche-geo.md` (KI-Suche/GEO-Fitness, Markenwahrnehmung, Messgrenzen)
 - `references/13-regeln-spam-risiken.md` (K.O.-Kriterien für Spam-Muster)
+- `references/14-regeln-ueberschriften.md` (Überschriften: was wirkt, was nicht)
 - `references/03-audit-checkliste.md` (die konkrete, kategorisierte Prüfliste mit Ampel-Logik,
   die auf diesem Regelwerk aufbaut)
 
@@ -129,7 +130,7 @@ Liste im Format, sortiert nach Wirkung/Aufwand:
 ...
 ```
 
-Jede Empfehlung muss auf eine konkrete Regel aus dem Regelwerk (`references/10`–`13`) oder eine
+Jede Empfehlung muss auf eine konkrete Regel aus dem Regelwerk (`references/10`–`14`) oder eine
 direkt beobachtete technische Tatsache zurückführbar sein. Die interne Regel-ID (z. B.
 "R-TECH-010") kann intern zur Nachvollziehbarkeit genutzt werden, taucht aber nicht zwingend im
 Kundentext auf – wichtiger ist die inhaltliche Begründung in normaler Sprache. Keine generischen
@@ -218,6 +219,7 @@ Kurzer Absatz am Ende jeder Analyse (im Chat, zusätzlich zum PDF):
 | `references/11-regeln-content-eeat.md` | Regelwerk Content-Qualität, E-E-A-T, YMYL | Schritt 2 |
 | `references/12-regeln-ki-suche-geo.md` | Regelwerk KI-Suche/GEO-Fitness | Schritt 2 |
 | `references/13-regeln-spam-risiken.md` | K.O.-Kriterien Spam-Muster | Schritt 2 |
+| `references/14-regeln-ueberschriften.md` | Regelwerk Überschriften H1–H6 | Schritt 2 |
 | `references/03-audit-checkliste.md` | Konkrete Prüfliste mit Ampel-Logik | Schritt 2–3 |
 | `references/04-schreibstil-und-natuerlichkeit.md` | Stilanalyse & natürliches Texten | Schritt 5 |
 | `references/05-bewertungssystem.md` | Score-Berechnung 0–1.000 inkl. Deckelungsregeln | Schritt 6 |

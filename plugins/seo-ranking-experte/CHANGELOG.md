@@ -7,6 +7,26 @@ Alle nennenswerten Änderungen an diesem Skill werden hier dokumentiert. Format 
 Die genauen Regeln, wann welche Stelle der Versionsnummer erhöht wird, stehen in
 `references/20-pflege-und-versionierung.md` (Abschnitt "Skill-Versionierung").
 
+## [1.3.0] – 2026-07-16
+
+### Hinzugefügt
+- Neues Regelwerk `references/14-regeln-ueberschriften.md` (R-HEAD-001 bis R-HEAD-024):
+  trennt, was Überschriften nachweislich bewirken (Ergebniszeile im SERP, Passage Ranking,
+  Zitierfähigkeit, Überfliegbarkeit), von der verbreiteten Fehlannahme, Suchbegriffe in
+  Überschriften seien ein eigener Rankingfaktor.
+- Vier neue Prüfpunkte in `03-audit-checkliste.md` Kategorie B, mit Verweis auf die
+  entsprechenden R-HEAD-Regeln.
+
+### Geändert
+- `03-audit-checkliste.md`: Prüfpunkt "H1 einmalig vorhanden" entfernt (R-HEAD-003 – mehrere
+  H1 sind kein Fehler) und durch die vier neuen, differenzierteren Punkte ersetzt.
+- `R-CONTENT-020` (`11-regeln-content-eeat.md`) auf Title-Tag/Meta-Description reduziert;
+  Überschriften-Teil ausgelagert nach `14-regeln-ueberschriften.md`, um zwei widersprüchliche
+  Aussagen zum selben Thema zu vermeiden.
+- `SKILL.md`: Regelwerk-Referenzen von `references/10`–`13` auf `10`–`14` erweitert (3 Stellen),
+  neue Datei in der Referenz-Tabelle ergänzt.
+- `references/20-pflege-und-versionierung.md`: Kategorie `HEAD` im ID-Schema ergänzt.
+
 ## [1.2.0] – 2026-07-15
 
 ### Hinzugefügt

@@ -1,6 +1,6 @@
 # SEO Ranking Experte – Claude Skill
 
-**Version: 1.2.0** ([Änderungshistorie](./CHANGELOG.md))
+**Version: 1.3.0** ([Änderungshistorie](./CHANGELOG.md))
 
 Ein Claude-Skill, der wie eine erfahrene SEO-Agentur arbeitet: Man übergibt eine einzelne URL
 oder eine ganze Website, und der Skill liefert eine kompakte SEO-Analyse, einen Gesamt-Score
@@ -56,6 +56,7 @@ seo-ranking-experte/
     ├── 11-regeln-content-eeat.md             # Regelwerk: Content & E-E-A-T
     ├── 12-regeln-ki-suche-geo.md             # Regelwerk: KI-Suche/GEO
     ├── 13-regeln-spam-risiken.md             # Regelwerk: Spam-K.O.-Kriterien
+    ├── 14-regeln-ueberschriften.md           # Regelwerk: Überschriften H1-H6
     └── 20-pflege-und-versionierung.md        # Regel-Pflege + Skill-Versionierung (SemVer)
 ```
 

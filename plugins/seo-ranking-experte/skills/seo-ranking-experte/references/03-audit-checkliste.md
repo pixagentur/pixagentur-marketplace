@@ -29,7 +29,14 @@ Eine Kategorie ist automatisch 🔴, wenn eines ihrer "K.O."-Kriterien verletzt 
       verständlich (kein reines Keyword-Stapeln)
 - [ ] Meta-Description: prägnant, klickfördernd, ca. 150–160 Zeichen, spiegelt Seiteninhalt
       wahrheitsgemäß
-- [ ] H1 einmalig vorhanden, thematisch stimmig mit Title; sinnvolle H2/H3-Struktur
+- [ ] H1 vorhanden und thematisch stimmig mit Title; benennt sie das Seitenthema so,
+      dass sie auch als Ergebniszeile in der Suche taugen würde? (R-HEAD-010, R-HEAD-012)
+- [ ] Zwischenüberschriften benennen ihr Thema, statt es nur anzudeuten – Prüfkriterium
+      ist Verständlichkeit, nicht Keyword-Vorkommen (R-HEAD-020)
+- [ ] Bei mehreren verwandten Seiten der Domain: keine wortgleichen H2 über die Seiten
+      hinweg (R-HEAD-023)
+- [ ] H-Hierarchie ohne Sprünge – als Barrierefreiheits-Kriterium bewertet, nicht als
+      Rankingkriterium (R-HEAD-002)
 - [ ] Kein Keyword-Stuffing, keine unnatürliche Wiederholung von Phrasen
 - [ ] Absätze/Struktur für Leser:innen und Featured-Snippet-/KI-Zitierfähigkeit optimiert
       (prägnante Antwort direkt nach Zwischenüberschrift, wo thematisch passend)

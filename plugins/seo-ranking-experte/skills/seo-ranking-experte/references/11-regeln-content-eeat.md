@@ -47,8 +47,10 @@ nur pro Einzelseite.*
 ## Struktur, Lesbarkeit, Suchintention
 
 **R-CONTENT-020 | aktiv | Hoch**
-Title-Tag (ca. 50–60 Zeichen, Haupt-Keyword, für Menschen verständlich), Meta-Description
-(ca. 150–160 Zeichen, klickfördernd, wahrheitsgemäß), eine H1, sinnvolle H2/H3-Hierarchie.
+Title-Tag (ca. 50–60 Zeichen, Haupt-Keyword, für Menschen verständlich) und
+Meta-Description (ca. 150–160 Zeichen, klickfördernd, wahrheitsgemäß) als
+On-Page-Grundlage. Für Überschriften gilt das eigene Regelwerk in
+`14-regeln-ueberschriften.md`.
 *Begründung: Grundlegender, stabiler On-Page-Standard.*
 
 **R-CONTENT-021 | aktiv | Hoch**

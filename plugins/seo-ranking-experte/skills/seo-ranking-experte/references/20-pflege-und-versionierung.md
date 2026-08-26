@@ -4,8 +4,9 @@ Diese Datei regelt zwei Ebenen der Versionierung:
 1. Die **Skill-Gesamtversion** (SemVer, `MAJOR.MINOR.PATCH`) – für Weiterentwicklungen des
    kompletten Skills.
 2. Die **Regelwerk-Ebene** (`10-regeln-technik-performance.md`, `11-regeln-content-eeat.md`,
-   `12-regeln-ki-suche-geo.md`, `13-regeln-spam-risiken.md`) – einzelne Regeln mit eigener ID,
-   die unabhängig von der Skill-Gesamtversion ergänzt/veraltet werden.
+   `12-regeln-ki-suche-geo.md`, `13-regeln-spam-risiken.md`, `14-regeln-ueberschriften.md`) –
+   einzelne Regeln mit eigener ID, die unabhängig von der Skill-Gesamtversion ergänzt/veraltet
+   werden.
 
 ## Grundprinzip: Ergänzen statt Überschreiben
 
@@ -14,7 +15,7 @@ Diese Datei regelt zwei Ebenen der Versionierung:
 - Veraltete Regeln werden nicht gelöscht, sondern auf `Status: veraltet` gesetzt und bekommen
   einen Hinweis, warum (z. B. "durch R-TECH-0xx abgelöst" oder "Google-Richtlinie hat sich
   geändert am [Datum]").
-- ID-Schema: `R-<KATEGORIE>-<Nummer>`, Kategorien: `TECH`, `CONTENT`, `GEO`, `SPAM`. Neue
+- ID-Schema: `R-<KATEGORIE>-<Nummer>`, Kategorien: `TECH`, `CONTENT`, `GEO`, `SPAM`, `HEAD`. Neue
   Kategorien nur anlegen, wenn eine neue Datei sie rechtfertigt (z. B. `R-LOCAL-...` für ein
   künftiges Local-SEO-Regelwerk).
 - Nummern in 10er-Schritten vergeben (001, 002, 010, 011 ...), damit später Regeln thematisch
