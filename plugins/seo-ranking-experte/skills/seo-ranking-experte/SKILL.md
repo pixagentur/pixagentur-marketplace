@@ -1,12 +1,12 @@
 ---
 name: seo-ranking-experte
-version: 1.3.0
+version: 1.4.0
 description: Agiert wie eine erfahrene SEO-Agentur, der eine einzelne URL oder eine ganze Website übergeben wird, um deren Google-Ranking nachhaltig zu verbessern. Führt eine vollständige, aber kompakte SEO-Analyse durch (technisches SEO, Content-Qualität, E-E-A-T, Core Web Vitals, Structured Data, KI-Suche/GEO), vergibt einen Gesamt-Score (0-1.000 Punkte, z.B. "837 von 1.000") mit Diagramm, liefert priorisierte Handlungsempfehlungen und fertige Text-Ersetzungsvorschläge im Originalstil der Seite, die nicht als KI-generiert erkennbar sind, und erzeugt am Ende immer automatisch einen speicherbaren PDF-Report. Nutze diesen Skill immer, wenn Nutzer:innen eine Website oder URL SEO-technisch analysieren, das Google-Ranking verbessern, einen SEO-Audit erstellen, Content für Suchmaschinen optimieren oder SEO-Texte umschreiben/austauschen möchten – auch bei indirekten Formulierungen wie "warum rankt meine Seite nicht", "Website für Google verbessern", "Text SEO-fit machen" oder "Content-Audit".
 ---
 
 # SEO Ranking Experte
 
-**Skill-Version: 1.3.0** – Änderungshistorie siehe `CHANGELOG.md`. Versionierungsregeln (wann
+**Skill-Version: 1.4.0** – Änderungshistorie siehe `CHANGELOG.md`. Versionierungsregeln (wann
 Major/Minor/Patch erhöht wird) stehen in `references/20-pflege-und-versionierung.md`.
 
 Dieser Skill lässt Claude wie eine renommierte SEO-Agentur arbeiten, der eine URL oder Website
@@ -44,6 +44,10 @@ Bevor die eigentliche Arbeit beginnt, IMMER folgende Punkte klären (per `ask_us
 wenn verfügbar, sonst als kurze Rückfrage). Wenn der Nutzer im Prompt bereits Antworten
 geliefert hat, nur die fehlenden Punkte erfragen – nicht doppelt fragen.
 
+0. **Modus**: Audit einer bestehenden Seite oder **Neuerstellung** eines Textes,
+   der noch nicht live ist? Wird der Skill zum Schreiben herangezogen, gilt der
+   Modus Neuerstellung (siehe unten) – das Regelwerk trägt beide Fälle, der
+   Workflow bisher nur das Prüfen.
 1. **Umfang**: Einzelne URL oder ganze Website/Domain?
 2. **Ziel**: Was soll die Seite erreichen? (z.B. Leads, Verkäufe, Markenbekanntheit,
    Informations-/Ratgeber-Traffic, lokale Sichtbarkeit)
@@ -57,6 +61,26 @@ geliefert hat, nur die fehlenden Punkte erfragen – nicht doppelt fragen.
 
 → Referenz: `references/00-intake-fragen.md` enthält die vollständigen Beispiel-Fragen inkl.
   Antwortoptionen für `ask_user_input_v0`.
+
+### Modus Neuerstellung (statt Schritt 1, 3, 6 und 7)
+
+Steht die Seite noch nicht, gibt es nichts zu messen. Der Ablauf ändert sich so:
+
+- **Schritt 1 entfällt.** An seine Stelle tritt die Recherche: Suchergebnisse zu den
+  Themenfeldern ansehen, die Formulierungen der rankenden Seiten und der verwandten
+  Suchanfragen auswerten, daraus die Phrasenliste bilden. Ohne angebundenes
+  Keyword-Tool gibt es keine Suchvolumina – das wird als Lücke benannt, nicht
+  erfunden.
+- **Schritt 2 bleibt**, aber als Schreibvorgabe gelesen: Die Regelwerke 10 bis 14
+  sagen genauso, wie ein Text entstehen soll, wie sie sagen, woran ein bestehender
+  scheitert.
+- **Schritt 3 entfällt** (nichts zu analysieren), **Schritt 5** wird von der
+  Swap-Liste zur Schreibvorgabe je Abschnitt.
+- **Schritt 6 entfällt**: Ein Score über eine Seite, die es nicht gibt, wäre erfunden.
+- **Schritt 7 wird ersetzt** durch eine Selbstprüfung gegen
+  `references/03-audit-checkliste.md`, mit ausdrücklicher Kennzeichnung, welche
+  Kategorien erst nach dem Livegang messbar sind (Core Web Vitals, Indexierung,
+  Rankings). Dazu das Angebot, den vollen Report nach dem Livegang nachzuliefern.
 
 ### Schritt 1 – Material sammeln
 

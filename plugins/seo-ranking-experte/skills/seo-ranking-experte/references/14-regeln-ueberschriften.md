@@ -81,6 +81,18 @@ Eine Überschrift ohne Fokus-Keyword, die ihr Thema klar benennt, ist korrekt un
 nicht bemängelt.
 *Begründung: Folgt aus R-HEAD-001 und R-HEAD-012.*
 
+**R-HEAD-025 | aktiv | Hoch**
+Die Überschrift greift die Formulierung der Suchanfrage auf, nicht nur deren Thema.
+Prüffrage: Würde jemand diese Zeile so bei Google eingeben oder in einem Ergebnis
+wiedererkennen? Symptom- und Problemformulierungen ausdrücklich einschließen
+("Trafo brummt", "Motor wird heiß"), weil ein großer Teil der Suchanfragen ein
+Problem beschreibt und kein Produkt.
+*Begründung: Kein Widerspruch zu R-HEAD-001, weil die Begründung nicht "rankt
+besser" lautet. Der Nutzen liegt in der Wiedererkennung durch den Suchenden, im
+Passage Ranking und in der Snippet-Erzeugung. R-HEAD-001 verbietet das Stopfen von
+Keywords; ohne diese Regel daneben entsteht daraus in der Anwendung "die
+Suchsprache ist egal", und es entstehen Überschriften, die niemand sucht.*
+
 **R-HEAD-021 | aktiv | Hoch**
 Keine Überschrift wird allein zum Zweck der Keyword-Platzierung umgeschrieben. Wird eine
 Überschrift geändert, muss die Begründung lauten: Thema war nicht erkennbar, Abschnitt

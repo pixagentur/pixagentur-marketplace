@@ -7,6 +7,23 @@ Alle nennenswerten Änderungen an diesem Skill werden hier dokumentiert. Format 
 Die genauen Regeln, wann welche Stelle der Versionsnummer erhöht wird, stehen in
 `references/20-pflege-und-versionierung.md` (Abschnitt "Skill-Versionierung").
 
+## [1.4.0] – 2026-09-17
+
+### Hinzugefügt
+- **Zweiter Modus „Neuerstellung".** Der Workflow kannte bisher nur das Prüfen einer
+  bestehenden URL. Das Regelwerk trägt beide Fälle, also musste man den Workflow umgehen,
+  um beim Schreiben an die Regeln zu kommen. Schritt 0 fragt den Modus jetzt ab; im Modus
+  Neuerstellung entfallen Schritt 1, 3 und 6, Schritt 5 wird von der Swap-Liste zur
+  Schreibvorgabe, und Schritt 7 wird durch eine Selbstprüfung gegen
+  `references/03-audit-checkliste.md` ersetzt, mit ausdrücklicher Kennzeichnung der
+  Kategorien, die erst nach dem Livegang messbar sind.
+- **R-HEAD-025** in `references/14-regeln-ueberschriften.md`: Die Überschrift greift die
+  Formulierung der Suchanfrage auf, nicht nur deren Thema, Symptom- und
+  Problemformulierungen eingeschlossen. Gegenstück zu R-HEAD-001: Ohne eine Gebotsregel
+  neben der Verbotsregel wird aus „Keywords sind kein Rankingfaktor" in der Anwendung „die
+  Suchsprache ist egal", und es entstehen Überschriften, die niemand sucht. Begründet wird
+  sie nicht mit Ranking, sondern mit Wiedererkennung, Passage Ranking und Snippet-Qualität.
+
 ## [1.3.0] – 2026-07-16
 
 ### Hinzugefügt
