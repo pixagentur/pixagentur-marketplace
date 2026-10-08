@@ -7,7 +7,9 @@ Eine Kategorie ist automatisch 🔴, wenn eines ihrer "K.O."-Kriterien verletzt 
 
 ## Kategorie A: Crawling & Indexierung (K.O.-Kategorie)
 
-- [ ] Seite liefert HTTP 200 (kein 4xx/5xx)
+- [ ] Seite liefert HTTP 200 (kein 4xx/5xx) – **im Antwortkopf gemessen, nicht am Inhalt
+      abgelesen** (R-TECH-006): Status, `x-robots-tag`, `retry-after` je Seitentyp; eine
+      nicht vorhandene Adresse liefert 404
 - [ ] Kein versehentliches `noindex` oder robots.txt-Block auf wichtigen Seiten
 - [ ] robots.txt vorhanden, sperrt keine wichtigen Bereiche versehentlich
 - [ ] XML-Sitemap vorhanden und aktuell, in robots.txt referenziert

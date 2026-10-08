@@ -62,6 +62,34 @@ Vor dem Eintragen in die Text-Swap-Liste kurz prüfen:
    kennzeichnen statt zu erfinden.
 4. Ist der Text weiterhin SEO-sauber (Ziel-Keyword natürlich integriert, keine Keyword-Stuffing)?
 
+## Was die Stilregeln leisten und was nicht
+
+Die Schritte 1 bis 4 machen einen Text lesbarer, halten die Markenstimme und vermeiden
+erkennbar generische Werbesprache, und zwar für menschliche Leser:innen. Das ist ihr Zweck.
+
+Sie leisten **nicht**, dass ein trainierter Klassifikator (KI-Detektor) den Text als
+menschlich einstuft. Die Merkmalsliste ist aus der Beschreibung maschineller Texte
+abgeleitet, nicht gegen das Urteil eines Detektors geprüft. Ein bestandener Selbsttest
+(keine Floskel gefunden, Satzlängen gemischt) misst nur, ob die Liste eingehalten wurde.
+Beobachtet: Ein Text, der jede Regel nachweislich einhielt, bekam von zwei schwachen
+Detektoren 0 % und 12 %, vom stärksten 100 % maschinell; eine absichtlich im
+Werkstattton umgeschriebene Fassung ebenfalls 100 %, ein nachweislich von Hand
+geschriebener Text desselben Kunden 37 %.
+
+Daraus folgt:
+
+- „Nicht als KI-generiert erkennbar" wird weder versprochen noch als geprüfte Eigenschaft
+  eines Textes ausgegeben, weder im Chat noch im Report.
+- **Wird eine Prüfung auf maschinelle Herkunft verlangt**, läuft sie gegen echte Werkzeuge:
+  mindestens zwei Detektoren unterschiedlicher Stärke, dazu eine Gegenprobe an einem
+  gesichert von Hand geschriebenen Text derselben Quelle (gleicher Kunde, gleiche
+  Textsorte). Berichtet werden alle drei Werte nebeneinander. Ohne Gegenprobe ist ein
+  Prozentwert nicht interpretierbar: Stuft der Detektor auch den Handtext hoch ein, trennt
+  er bei dieser Textsorte nicht.
+- Für die Google-Bewertung spielt die Erstellungsmethode keine Rolle (R-CONTENT-040),
+  entscheidend ist die Qualität. Ein Detektorwert ist deshalb kein SEO-Befund und fließt
+  nicht in den Score ein.
+
 ## Hinweis
 
 Diese Vorgaben dienen dazu, hochwertigen, glaubwürdigen und für Menschen wie Suchmaschinen

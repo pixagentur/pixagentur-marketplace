@@ -10,6 +10,10 @@ Bevorzugt über `ask_user_input_v0` stellen (Buttons statt Freitext, wo sinnvoll
 {
   "questions": [
     {
+      "question": "Was soll am Ende herauskommen?",
+      "options": ["Audit mit Report (bestehende Seite)", "Neuer Text (Seite noch nicht live)", "Bestehende Seite direkt überarbeiten"]
+    },
+    {
       "question": "Analysieren wir eine einzelne URL oder die ganze Website?",
       "options": ["Einzelne URL", "Ganze Website/Domain", "Mehrere bestimmte URLs"]
     },
@@ -35,6 +39,16 @@ Danach als Freitext-Rückfragen ergänzen (bei Bedarf, max. so viele wie nötig)
 - Gibt es Zugriff auf Google Search Console / Analytics-Daten, die die Analyse unterstützen
   könnten (bei angebundenen Connectors direkt nutzen)?
 - Gibt es ein Corporate-Design/Textstyleguide, das beachtet werden muss?
+
+## Wann aus dem Bestand abgeleitet werden darf
+
+Im Modus Überarbeitung (und bei Neuerstellungen für eine bestehende Leistung) dürfen Ziel,
+Stil, Region und Zielgruppe aus der Seite und ihren Schwesterseiten abgeleitet statt
+gefragt werden; jede Ableitung wird im Abschluss als Annahme genannt. **Nicht** abgeleitet
+wird bei einer neuen Leistung, einem neuen Produkt oder einem neuen Markt: Dann mindestens
+die Zielgruppe (B2B/B2C, Branche) ausdrücklich fragen, bevor Beispiele, Bilder oder Texte
+entstehen. Der Bestand sagt über etwas Neues nichts aus, er liefert nur eine plausible
+Vorlage, und die verdeckt, dass die Frage offen ist.
 
 ## Warum diese Fragen wichtig sind
 

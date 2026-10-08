@@ -33,6 +33,18 @@ Crawling blockieren; technische Umsetzung des Banners immer mitprüfen, nicht nu
 *Begründung: Ein häufig unterschätzter, aber real wirksamer Rankingkiller bei modernen
 Consent-Lösungen.*
 
+**R-TECH-006 | aktiv | K.O.**
+Statuscode und Antwortkopf werden getrennt vom Seiteninhalt geprüft: HTTP-Status,
+`x-robots-tag`, `retry-after` und `meta robots`, für eine Stichprobe je Seitentyp
+(Startseite, Unterseite, Rechtstext, nicht vorhandene Adresse → muss 404 liefern, statische
+Datei, REST-Schnittstelle). Weichen HTML-Seiten im Status von statischen Dateien ab, sitzt
+die Ursache meist in einer vorgeschalteten Schicht (Wartungsmodus, Cache, Firewall), nicht
+in der Seite selbst. Nach einem Domainwechsel zusätzlich prüfen, ob die alte Bau-Adresse
+noch öffentlich erreichbar ist und welchen Canonical sie trägt.
+*Begründung: Eine Seite kann ihren vollständigen Inhalt mit `503` und `noindex` ausliefern;
+Suchmaschinen behandeln sie dann als nicht verfügbar, obwohl der gelesene Text fertig
+aussieht. Inhalt und Antwortkopf sind zwei getrennte Messungen.*
+
 ## Core Web Vitals & Page Experience
 
 **R-TECH-010 | aktiv | Hoch**

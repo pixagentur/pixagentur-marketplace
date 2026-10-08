@@ -1,12 +1,12 @@
 ---
 name: seo-ranking-experte
-version: 1.4.0
-description: Agiert wie eine erfahrene SEO-Agentur, der eine einzelne URL oder eine ganze Website übergeben wird, um deren Google-Ranking nachhaltig zu verbessern. Führt eine vollständige, aber kompakte SEO-Analyse durch (technisches SEO, Content-Qualität, E-E-A-T, Core Web Vitals, Structured Data, KI-Suche/GEO), vergibt einen Gesamt-Score (0-1.000 Punkte, z.B. "837 von 1.000") mit Diagramm, liefert priorisierte Handlungsempfehlungen und fertige Text-Ersetzungsvorschläge im Originalstil der Seite, die nicht als KI-generiert erkennbar sind, und erzeugt am Ende immer automatisch einen speicherbaren PDF-Report. Nutze diesen Skill immer, wenn Nutzer:innen eine Website oder URL SEO-technisch analysieren, das Google-Ranking verbessern, einen SEO-Audit erstellen, Content für Suchmaschinen optimieren oder SEO-Texte umschreiben/austauschen möchten – auch bei indirekten Formulierungen wie "warum rankt meine Seite nicht", "Website für Google verbessern", "Text SEO-fit machen" oder "Content-Audit".
+version: 1.5.0
+description: Agiert wie eine erfahrene SEO-Agentur, der eine einzelne URL oder eine ganze Website übergeben wird, um deren Google-Ranking nachhaltig zu verbessern. Drei Modi: Audit, Neuerstellung eines Textes, Überarbeitung einer Live-Seite mit direkter Umsetzung. Im Audit: kompakte SEO-Analyse (technisches SEO, Content-Qualität, E-E-A-T, Core Web Vitals, Structured Data, KI-Suche/GEO), Gesamt-Score (0-1.000 Punkte, z.B. "837 von 1.000") mit Diagramm, priorisierte Handlungsempfehlungen, fertige Text-Ersetzungsvorschläge im Originalstil der Seite und automatisch ein speicherbarer PDF-Report. Nutze diesen Skill immer, wenn Nutzer:innen eine Website oder URL SEO-technisch analysieren, das Google-Ranking verbessern, einen SEO-Audit erstellen, eine bestehende Seite überarbeiten, Content für Suchmaschinen optimieren oder SEO-Texte schreiben/umschreiben möchten – auch bei indirekten Formulierungen wie "warum rankt meine Seite nicht", "Website für Google verbessern", "Text SEO-fit machen" oder "Content-Audit".
 ---
 
 # SEO Ranking Experte
 
-**Skill-Version: 1.4.0** – Änderungshistorie siehe `CHANGELOG.md`. Versionierungsregeln (wann
+**Skill-Version: 1.5.0** – Änderungshistorie siehe `CHANGELOG.md`. Versionierungsregeln (wann
 Major/Minor/Patch erhöht wird) stehen in `references/20-pflege-und-versionierung.md`.
 
 Dieser Skill lässt Claude wie eine renommierte SEO-Agentur arbeiten, der eine URL oder Website
@@ -44,10 +44,13 @@ Bevor die eigentliche Arbeit beginnt, IMMER folgende Punkte klären (per `ask_us
 wenn verfügbar, sonst als kurze Rückfrage). Wenn der Nutzer im Prompt bereits Antworten
 geliefert hat, nur die fehlenden Punkte erfragen – nicht doppelt fragen.
 
-0. **Modus**: Audit einer bestehenden Seite oder **Neuerstellung** eines Textes,
-   der noch nicht live ist? Wird der Skill zum Schreiben herangezogen, gilt der
-   Modus Neuerstellung (siehe unten) – das Regelwerk trägt beide Fälle, der
-   Workflow bisher nur das Prüfen.
+0. **Modus**: **Audit** einer bestehenden Seite, **Neuerstellung** eines Textes, der
+   noch nicht live ist, oder **Überarbeitung** einer Live-Seite, bei der die Änderungen
+   gleich umgesetzt werden (z. B. direkt im CMS)? Wird der Skill zum Schreiben
+   herangezogen, gilt der Modus Neuerstellung; heißt der Auftrag „Seite verbessern,
+   auf aktuellen Stand bringen, Formulierungen überarbeiten", gilt der Modus
+   Überarbeitung (beide siehe unten). Der Liefergegenstand entscheidet: Report,
+   neuer Text oder geänderte Seite.
 1. **Umfang**: Einzelne URL oder ganze Website/Domain?
 2. **Ziel**: Was soll die Seite erreichen? (z.B. Leads, Verkäufe, Markenbekanntheit,
    Informations-/Ratgeber-Traffic, lokale Sichtbarkeit)
@@ -61,6 +64,14 @@ geliefert hat, nur die fehlenden Punkte erfragen – nicht doppelt fragen.
 
 → Referenz: `references/00-intake-fragen.md` enthält die vollständigen Beispiel-Fragen inkl.
   Antwortoptionen für `ask_user_input_v0`.
+
+**Ableiten statt fragen – nur, wo der Bestand etwas über den Gegenstand sagt.** Behandelt
+die Seite eine Leistung, die es auf der Website schon gibt, dürfen Ziel, Stil, Region und
+Zielgruppe aus der Seite selbst und ihren Schwesterseiten abgeleitet werden; jede so
+gewonnene Antwort wird in Schritt 8 als Annahme genannt. Geht es um eine **neue** Leistung,
+ein neues Produkt oder einen neuen Markt, sagt der Bestand darüber nichts aus, er liefert
+nur eine plausible Vorlage. Dann wird mindestens die **Zielgruppe** (B2B/B2C, Branche)
+ausdrücklich gefragt, bevor Beispiele, Bilder oder Texte entstehen.
 
 ### Modus Neuerstellung (statt Schritt 1, 3, 6 und 7)
 
@@ -81,6 +92,38 @@ Steht die Seite noch nicht, gibt es nichts zu messen. Der Ablauf ändert sich so
   `references/03-audit-checkliste.md`, mit ausdrücklicher Kennzeichnung, welche
   Kategorien erst nach dem Livegang messbar sind (Core Web Vitals, Indexierung,
   Rankings). Dazu das Angebot, den vollen Report nach dem Livegang nachzuliefern.
+- **Teil einer Reihe?** Entsteht der Text als weiterer Beitrag einer Reihe auf derselben
+  Quelle (Ratgeber, Blog, Leistungsseiten), vor dem Schreiben die Gliederung der letzten
+  Beiträge dieser Reihe lesen und die neue bewusst dagegen setzen. Die
+  Pflichtbestandteile bleiben (eine H1, Antwort direkt unter der Zwischenüberschrift,
+  Belege), aber Reihenfolge, Form der Kapitel (Fließtext, Tabelle, Schrittfolge,
+  Fallbeispiel) und die Art des Abschlusses wechseln. Das Regelwerk legt fest, was
+  enthalten sein muss, nicht in welcher Reihenfolge und Form. Gleichförmigkeit fällt erst
+  in der Sammlung auf, nie am einzelnen Text, deshalb wird sie hier geprüft und nicht in
+  der Abnahme.
+
+### Modus Überarbeitung einer Live-Seite (statt Schritt 3 bis 7)
+
+Die Seite steht, das Ergebnis ist aber nicht ein Report, sondern die geänderte Seite. Der
+Ablauf:
+
+- **Schritt 0** darf aus dem Bestand beantwortet werden (siehe „Ableiten statt fragen"
+  oben), nicht abfragen, was die Seite und ihre Schwesterseiten schon beantworten.
+- **Schritt 1 und 2 wie im Audit**, einschließlich der getrennten Prüfung des
+  Antwortkopfes.
+- **Schritt 3 und 4** schrumpfen auf eine kurze Liste der Befunde, die nicht im Text
+  liegen und deshalb nicht mit umgesetzt werden (Technik, Ladezeit, fehlende Seiten), als
+  offene Punkte für den Abschluss.
+- **Schritt 5 wird zur direkten Umsetzung**: Die Texte nach
+  `references/04-schreibstil-und-natuerlichkeit.md` überarbeiten und einspielen, dazu im
+  Chat ein Vorher/Nachher-Protokoll je geändertem Element (Element, vorher, nachher,
+  Grund). Das Protokoll ersetzt die Swap-Tabelle, damit jede Änderung nachvollziehbar und
+  rückgängig zu machen bleibt.
+- **Schritt 6 und 7 (Score, PDF) nur auf Wunsch.** Ohne ausdrückliche Bitte entsteht
+  kein Report.
+- **Schritt 8 bleibt**, mit allen aus dem Bestand abgeleiteten Annahmen.
+- Faktenregel unverändert: Preise, Leistungen, Systeme und Kennzahlen nur aus den eigenen
+  Seiten des Kunden (Preisseite, AGB, Leistungsseiten) übernehmen, nie ergänzen.
 
 ### Schritt 1 – Material sammeln
 
@@ -91,6 +134,13 @@ Steht die Seite noch nicht, gibt es nichts zu messen. Der Ablauf ändert sich so
     `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=<URL>&strategy=mobile`
     (und zusätzlich `&strategy=desktop`) per `web_fetch`.
   - robots.txt (`/robots.txt`) und Sitemap (`/sitemap.xml`) der Domain per `web_fetch` prüfen.
+  - **Antwortkopf getrennt vom Inhalt prüfen** (R-TECH-006): HTTP-Status, `x-robots-tag`,
+    `retry-after` und `meta robots` für eine Stichprobe je Seitentyp (Startseite,
+    Unterseite, Rechtstext, nicht vorhandene Adresse, statische Datei, ggf.
+    REST-Schnittstelle), z. B. per `curl -sI` oder `curl -s -o /dev/null -w '%{http_code}'`.
+    Eine Seite kann ihren vollständigen Inhalt ausliefern und trotzdem `503` mit
+    `noindex` melden; wer nur den Text liest, sieht dann eine fertige Seite, die
+    Suchmaschine eine nicht verfügbare. `web_fetch` zeigt den Status nicht verlässlich an.
   - Strukturierte Daten: sichtbaren HTML-Quellcode auf `application/ld+json`-Blöcke prüfen
     (im von `web_fetch` gelieferten Content erkennbar, sofern nicht rein JS-gerendert).
 - Bei ganzen Websites: 5–10 repräsentative Seiten auswählen (Startseite, wichtigste
@@ -174,7 +224,9 @@ gegenüberstellen**, damit 1:1 ausgetauscht werden kann.
 Vor dem Formulieren neuer Texte: `references/04-schreibstil-und-natuerlichkeit.md` anwenden, um
 1) den bestehenden Schreibstil zu treffen und 2) Texte zu erzeugen, die sich wie von einem
 erfahrenen menschlichen Fachautor geschrieben lesen (Variation im Satzbau, echte Beispiele/
-Erfahrungswerte, keine generischen KI-Textmuster).
+Erfahrungswerte, keine generischen KI-Textmuster). Diese Regeln richten sich an
+Leser:innen. Sie sind kein Nachweis, dass ein KI-Detektor den Text als menschlich einstuft,
+und werden auch nicht so verkauft (siehe dort, Abschnitt „Was die Stilregeln leisten").
 
 ### Schritt 6 – Score berechnen
 
@@ -183,10 +235,11 @@ Berechne den Gesamtscore (0–1.000 Punkte) nach der Methodik in
 danach die Deckelungsregeln (K.O.-Crawling, Spam-Treffer, YMYL ohne E-E-A-T) anwenden. Ordne den
 Score anhand der Bandbreiten-Tabelle ein (z. B. "837 von 1.000 Punkten – Gut").
 
-### Schritt 7 – PDF-Report erzeugen (immer am Ende, ohne Nachfrage)
+### Schritt 7 – PDF-Report erzeugen (im Modus Audit immer am Ende, ohne Nachfrage)
 
-Sobald eine URL/Website vollständig analysiert wurde, wird **immer automatisch** ein PDF-Report
-erzeugt – nicht nur auf Nachfrage. Vorgehen:
+Sobald eine URL/Website im Modus Audit vollständig analysiert wurde, wird **immer automatisch**
+ein PDF-Report erzeugt – nicht nur auf Nachfrage. Im Modus Neuerstellung entfällt der Report
+(siehe dort), im Modus Überarbeitung entsteht er nur auf ausdrücklichen Wunsch. Vorgehen:
 
 1. Alle Ergebnisse aus Schritt 3–6 in das Datenschema von
    `scripts/generate_report_pdf.py` (`build_report`) überführen: Gesamtscore, Kategorie-Punkte,
@@ -280,3 +333,9 @@ Veröffentlichung nicht mit hochgeladen werden.
   falsche Sicherheit vorzutäuschen.
 - Keine Garantie für Rankingverbesserung – Google bestätigt selbst, dass das Erfüllen aller
   Richtlinien keine Aufnahme oder Top-Platzierung garantiert.
+- Keine Zusage, dass Texte von KI-Detektoren als menschlich eingestuft werden. Die
+  Stilregeln sind nicht gegen einen Klassifikator kalibriert; ein Text, der jede Regel
+  einhält, kann bei einem starken Detektor trotzdem mit 100 % als maschinell gelten. Wird
+  eine solche Prüfung verlangt, läuft sie nach dem Kalibrierverfahren in
+  `references/04-schreibstil-und-natuerlichkeit.md`, und das Ergebnis wird als Messung
+  mit Gegenprobe berichtet, nicht als Eigenschaft des Textes.

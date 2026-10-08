@@ -34,7 +34,7 @@ from datetime import datetime
 # Muss synchron mit dem `version:`-Feld im Frontmatter von SKILL.md und mit CHANGELOG.md
 # gehalten werden (siehe references/20-pflege-und-versionierung.md, Abschnitt
 # "Skill-Versionierung").
-SKILL_VERSION = "1.4.0"
+SKILL_VERSION = "1.5.0"
 
 try:
     import matplotlib

@@ -7,6 +7,44 @@ Alle nennenswerten Änderungen an diesem Skill werden hier dokumentiert. Format 
 Die genauen Regeln, wann welche Stelle der Versionsnummer erhöht wird, stehen in
 `references/20-pflege-und-versionierung.md` (Abschnitt "Skill-Versionierung").
 
+## [1.5.0] – 2026-10-08
+
+### Hinzugefügt
+- **Dritter Modus „Überarbeitung einer Live-Seite".** Der häufigste Fall, eine bestehende
+  Seite verbessern und die Änderungen gleich einspielen, passte weder in Audit (Ergebnis ist
+  ein Report) noch in Neuerstellung (keine Seite zum Messen). Schritt 1 und 2 laufen wie im
+  Audit, Schritt 5 wird zur direkten Umsetzung mit Vorher/Nachher-Protokoll im Chat, Score
+  und PDF entstehen nur auf Wunsch.
+- **Ableiten statt fragen, mit Grenze** (Schritt 0, `references/00-intake-fragen.md`):
+  Intake-Punkte dürfen aus dem Bestand beantwortet werden, wenn die Seite eine bestehende
+  Leistung behandelt, und werden im Abschluss als Annahmen genannt. Bei neuer Leistung,
+  neuem Produkt oder neuem Markt wird mindestens die Zielgruppe ausdrücklich gefragt.
+  Intake-Frage zum Modus um die dritte Option ergänzt.
+- **R-TECH-006** in `references/10-regeln-technik-performance.md` (K.O.): Antwortkopf
+  (Status, `x-robots-tag`, `retry-after`, `meta robots`) getrennt vom Inhalt prüfen, je
+  Seitentyp. Eine Seite kann vollständigen Inhalt mit `503` und `noindex` ausliefern. Dazu
+  ein Unterpunkt in Schritt 1 und der präzisierte Prüfpunkt in
+  `references/03-audit-checkliste.md` Kategorie A.
+- **Reihen-Prüfung im Modus Neuerstellung:** Bei einem weiteren Beitrag einer Reihe
+  zuerst die Gliederung der letzten Beiträge lesen und Reihenfolge, Kapitelform und
+  Abschluss bewusst variieren. Die Pflichtbestandteile bleiben.
+- Abschnitt **„Was die Stilregeln leisten und was nicht"** in
+  `references/04-schreibstil-und-natuerlichkeit.md`, mit Kalibrierverfahren für den Fall,
+  dass eine Prüfung auf maschinelle Herkunft verlangt wird (mindestens zwei Detektoren
+  unterschiedlicher Stärke plus Gegenprobe an einem gesichert von Hand geschriebenen Text).
+
+### Geändert
+- **Beschreibung (Frontmatter):** Das Versprechen „Text-Ersetzungsvorschläge …, die nicht
+  als KI-generiert erkennbar sind" entfernt. Die Stilregeln sind nicht gegen einen
+  Detektor kalibriert; an einem Text, der jede Regel einhielt, urteilte der stärkste
+  Detektor 100 % maschinell. Die Beschreibung nennt jetzt die drei Modi und bindet den
+  automatischen PDF-Report an den Modus Audit.
+- Schritt 7: PDF-Pflicht gilt ausdrücklich für den Modus Audit (in 1.4.0 widersprach die
+  Überschrift „immer am Ende" dem Modus Neuerstellung).
+- Schritt 5 und „Grenzen dieses Skills": Stilregeln richten sich an Leser:innen, kein
+  Nachweis gegenüber KI-Detektoren.
+- `README.md`: Versionsangabe nachgezogen (stand seit 1.3.0 auf 1.3.0).
+
 ## [1.4.0] – 2026-09-17
 
 ### Hinzugefügt
