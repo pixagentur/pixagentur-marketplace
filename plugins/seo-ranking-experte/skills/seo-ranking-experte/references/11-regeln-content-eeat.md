@@ -77,6 +77,49 @@ oberflächliche Rundum-Artikel, die viele Themen nur anreißen.
 *Begründung: Höhere Wahrscheinlichkeit, ein Thema so vollständig abzudecken, dass keine
 Anschlusssuche nötig ist – auch relevant für Zitierfähigkeit in KI-Antworten.*
 
+**R-CONTENT-025 | aktiv | Hoch**
+Vor der Keyword-Auswahl in einem Satz festhalten, **wen** die Seite erreichen soll und **was
+diese Person bereits weiß**. Eine Platzierung in den Suchergebnissen belegt, dass ein Inhalt zu
+einer Suchanfrage passt, nie, dass die Suchenden die eigenen Käufer sind. Bei Fachpublikum fällt
+die Erklärebene ("Was ist X und wann braucht man es") als Zielinhalt weg, auch wenn genau solche
+Beiträge vorn stehen.
+*Begründung: Wer die vorderen Plätze abschreibt, übernimmt mit ihnen deren Publikum; die
+Intentionsfrage "wonach wird gesucht" ist der Zielgruppenfrage "wer soll gefunden werden"
+nachgeordnet, nicht umgekehrt.*
+
+**R-CONTENT-026 | aktiv | Hoch**
+Intentionsdaten je **Suchbegriff** auswerten, nicht je Thema. Der kommerzielle bzw.
+informationale Anteil liegt pro Begriff vor; ein hoher informationaler Anteil am Oberbegriff sagt
+nichts über die Longtails darunter, die oft transaktional und navigational sind.
+*Begründung: Die Aggregation auf Themenebene verdeckt genau die Begriffe, an denen die kaufende
+Nachfrage hängt, und begründet damit Inhalte, die niemand kauft.*
+
+**R-CONTENT-027 | aktiv | Hoch**
+Drei Cluster gezielt suchen, weil sie bei Fachpublikum regelmäßig die Käufer tragen und bei
+reiner Oberbegriff-Recherche durchfallen: (1) **Typen-, Modell- und Baureihenbezeichnungen** –
+Betreiber suchen den Namen, der an ihrem eigenen Gerät steht; (2) **Pflicht-, Norm- und
+Fristenbegriffe** – das Umfeld vorgeschriebener wiederkehrender Prüfungen, meist mit hohem
+kommerziellen Anteil und je Schreibweise eigener Nachfrage; (3) **Symptom- und
+Störungsformulierungen** (Gegenstück zu R-HEAD-025 auf Überschriftenebene).
+*Begründung: Diese Begriffe liegen neben dem Oberbegriff, zeigen aber höhere Kaufabsicht und oft
+deutlich höhere Klickpreise – ein Hinweis darauf, dass dort tatsächlich eingekauft wird.*
+
+**R-CONTENT-028 | aktiv | Mittel**
+Ein erklärender Grundlagenabschnitt kommt auf eine Leistungsseite nur mit Begründung: Entweder
+braucht der Kundenkreis ihn wirklich, oder er stützt eine Kaufentscheidung. Sonst wird dasselbe
+Thema in die Form gebracht, in der die Zielperson danach sucht – nicht "Was ist X", sondern
+"Finden Sie Ihr Modell", "Was Ihre Bauart für die Wartung heißt", "Deckt Ihre bisherige Prüfung
+diesen Teil ab".
+*Begründung: Der Oberbegriff bleibt als Sichtbarkeitsanker wertvoll, ist aber kein Anlass für
+einen Lehrtext an Leser:innen, die den Gegenstand längst kennen.*
+
+**R-CONTENT-029 | aktiv | Mittel**
+Wird ein Erklärabschnitt nach R-CONTENT-028 umgebaut, die Fachbegriffe aus der Termanalyse
+(TF-IDF o. Ä.) in die neuen Abschnitte übernehmen und danach gegenzählen. Weggefallen ist der
+Rahmen, nicht das Vokabular.
+*Begründung: Verhindert, dass mit dem gestrichenen Abschnitt die semantische Abdeckung des
+Themas verloren geht – ein Verlust, der an der gekürzten Seite nicht auffällt.*
+
 ## Content-Pflege
 
 **R-CONTENT-030 | aktiv | Mittel**

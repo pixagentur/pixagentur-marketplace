@@ -39,6 +39,12 @@ Eine Kategorie ist automatisch 🔴, wenn eines ihrer "K.O."-Kriterien verletzt 
       hinweg (R-HEAD-023)
 - [ ] H-Hierarchie ohne Sprünge – als Barrierefreiheits-Kriterium bewertet, nicht als
       Rankingkriterium (R-HEAD-002)
+- [ ] Zielbegriffe passen zum Kundenkreis, nicht nur zur SERP: Intentionsdaten je Begriff
+      geprüft, Typen-/Modellbezeichnungen, Pflicht-/Fristenbegriffe und Symptomformulierungen
+      gesucht (R-CONTENT-025 bis R-CONTENT-027)
+- [ ] Erklärende Grundlagenabschnitte auf Leistungsseiten begründet – oder in die Form
+      gebracht, in der die Zielperson sucht, mit erhaltenem Fachvokabular
+      (R-CONTENT-028, R-CONTENT-029)
 - [ ] Kein Keyword-Stuffing, keine unnatürliche Wiederholung von Phrasen
 - [ ] Absätze/Struktur für Leser:innen und Featured-Snippet-/KI-Zitierfähigkeit optimiert
       (prägnante Antwort direkt nach Zwischenüberschrift, wo thematisch passend)

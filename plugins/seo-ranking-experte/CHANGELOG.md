@@ -7,6 +7,31 @@ Alle nennenswerten Änderungen an diesem Skill werden hier dokumentiert. Format 
 Die genauen Regeln, wann welche Stelle der Versionsnummer erhöht wird, stehen in
 `references/20-pflege-und-versionierung.md` (Abschnitt "Skill-Versionierung").
 
+## [1.6.0] – 2026-10-30
+
+### Hinzugefügt
+- **Schritt 2a „Käufer-Abgleich der Suchintention"** in `SKILL.md`, verpflichtend in allen
+  drei Modi nach der Keyword-Arbeit und vor der Abschnittsplanung. Anlass: Ein
+  nachfragestarker Oberbegriff war überwiegend informational, vorn standen zwei
+  Erklärbeiträge – daraus wurde ein Grundlagenabschnitt abgeleitet, den der Auftraggeber
+  strich, weil wer den Gegenstand nicht kennt, nicht zu seinen Kunden gehört. Eine
+  Platzierung belegt Passung zur Suchanfrage, nie, dass die Suchenden die eigenen Käufer
+  sind.
+- **R-CONTENT-025 bis R-CONTENT-029** in `references/11-regeln-content-eeat.md`: Käuferfrage
+  und Wissensstand vor der Keyword-Auswahl; Intentionsdaten je Suchbegriff statt je Thema;
+  drei gezielt zu suchende Cluster (Typen-/Modell-/Baureihenbezeichnungen, Pflicht-/Norm-/
+  Fristenbegriffe, Symptom- und Störungsformulierungen); erklärende Abschnitte auf
+  Leistungsseiten nur mit Begründung; beim Umbau das Fachvokabular aus der Termanalyse
+  mitnehmen und gegenzählen.
+- Zwei Prüfpunkte in `references/03-audit-checkliste.md` Kategorie B zu den neuen Regeln.
+- `references/00-intake-fragen.md`: Frage nach dem Wissensstand der Zielgruppe, plus
+  Ergänzung in „Warum diese Fragen wichtig sind".
+
+### Geändert
+- Schritt 0 Punkt 3 (Zielgruppe) und die Modus-Abschnitte Neuerstellung/Überarbeitung
+  verweisen auf Schritt 2a, damit der Abgleich vor dem Gliederungsentwurf läuft und nicht
+  nachträglich.
+
 ## [1.5.0] – 2026-10-08
 
 ### Hinzugefügt

@@ -32,6 +32,8 @@ Bevorzugt über `ask_user_input_v0` stellen (Buttons statt Freitext, wo sinnvoll
 Danach als Freitext-Rückfragen ergänzen (bei Bedarf, max. so viele wie nötig):
 
 - Zielgruppe genauer: Branche, B2B/B2C, Fachwissen-Level, Region/Sprache?
+- Was weiß diese Zielgruppe über den Gegenstand schon? (Entscheidet in Schritt 2a, ob ein
+  erklärender Abschnitt Zielinhalt ist oder am Kundenkreis vorbeigeht.)
 - Gibt es Ziel-Keywords oder Themen, für die die Seite gefunden werden soll?
 - Gibt es bekannte Mitbewerber-URLs, die aktuell besser ranken?
 - Betrifft der Inhalt YMYL-Themen (Gesundheit, Recht, Finanzen, Sicherheit)? Falls ja: gibt es
@@ -53,7 +55,8 @@ Vorlage, und die verdeckt, dass die Frage offen ist.
 ## Warum diese Fragen wichtig sind
 
 - **Ziel & Zielgruppe** bestimmen, welche Keywords/Suchintentionen überhaupt relevant sind –
-  ohne das ist jede Keyword-Empfehlung geraten.
+  ohne das ist jede Keyword-Empfehlung geraten. Der Wissensstand der Zielgruppe gehört dazu:
+  Eine Platzierung belegt Passung zur Suchanfrage, nicht zum eigenen Kundenkreis.
 - **Schreibstil-Vorgabe** ist Voraussetzung dafür, dass die Text-Swap-Liste in Schritt 5 nicht
   wie ein Fremdkörper auf der Seite wirkt.
 - **YMYL-Status** entscheidet, wie strikt E-E-A-T-Signale (Autor:innen-Nachweis, Quellenangaben,

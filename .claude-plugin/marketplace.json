@@ -12,7 +12,7 @@
     {
       "name": "seo-ranking-experte",
       "description": "Agiert wie eine erfahrene SEO-Agentur: analysiert eine URL oder ganze Website, vergibt einen Score (0-1.000), liefert priorisierte Handlungsempfehlungen, fertige Text-Swap-Vorschläge und erzeugt automatisch einen PDF-Report.",
-      "version": "1.5.0",
+      "version": "1.6.0",
       "source": "./plugins/seo-ranking-experte",
       "strict": false,
       "skills": [

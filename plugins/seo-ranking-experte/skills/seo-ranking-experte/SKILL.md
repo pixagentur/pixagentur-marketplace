@@ -1,12 +1,12 @@
 ---
 name: seo-ranking-experte
-version: 1.5.0
+version: 1.6.0
 description: Agiert wie eine erfahrene SEO-Agentur, der eine einzelne URL oder eine ganze Website übergeben wird, um deren Google-Ranking nachhaltig zu verbessern. Drei Modi: Audit, Neuerstellung eines Textes, Überarbeitung einer Live-Seite mit direkter Umsetzung. Im Audit: kompakte SEO-Analyse (technisches SEO, Content-Qualität, E-E-A-T, Core Web Vitals, Structured Data, KI-Suche/GEO), Gesamt-Score (0-1.000 Punkte, z.B. "837 von 1.000") mit Diagramm, priorisierte Handlungsempfehlungen, fertige Text-Ersetzungsvorschläge im Originalstil der Seite und automatisch ein speicherbarer PDF-Report. Nutze diesen Skill immer, wenn Nutzer:innen eine Website oder URL SEO-technisch analysieren, das Google-Ranking verbessern, einen SEO-Audit erstellen, eine bestehende Seite überarbeiten, Content für Suchmaschinen optimieren oder SEO-Texte schreiben/umschreiben möchten – auch bei indirekten Formulierungen wie "warum rankt meine Seite nicht", "Website für Google verbessern", "Text SEO-fit machen" oder "Content-Audit".
 ---
 
 # SEO Ranking Experte
 
-**Skill-Version: 1.5.0** – Änderungshistorie siehe `CHANGELOG.md`. Versionierungsregeln (wann
+**Skill-Version: 1.6.0** – Änderungshistorie siehe `CHANGELOG.md`. Versionierungsregeln (wann
 Major/Minor/Patch erhöht wird) stehen in `references/20-pflege-und-versionierung.md`.
 
 Dieser Skill lässt Claude wie eine renommierte SEO-Agentur arbeiten, der eine URL oder Website
@@ -55,6 +55,8 @@ geliefert hat, nur die fehlenden Punkte erfragen – nicht doppelt fragen.
 2. **Ziel**: Was soll die Seite erreichen? (z.B. Leads, Verkäufe, Markenbekanntheit,
    Informations-/Ratgeber-Traffic, lokale Sichtbarkeit)
 3. **Zielgruppe**: Wer soll gefunden werden? (B2B/B2C, Fachpublikum/Laien, Sprache/Region)
+   Dazu gehört, **was diese Person bereits weiß** – das entscheidet in Schritt 2a, ob ein
+   erklärender Abschnitt überhaupt Zielinhalt ist.
 4. **Ziel-Keywords/Themen** (falls bekannt): Für welche Suchbegriffe soll die Seite ranken?
 5. **Wettbewerb** (optional): Bekannte Mitbewerber-URLs, die aktuell besser ranken?
 6. **Textstil-Vorgabe**: Soll der bestehende Schreibstil beibehalten werden (Du/Sie, Tonalität,
@@ -81,7 +83,9 @@ Steht die Seite noch nicht, gibt es nichts zu messen. Der Ablauf ändert sich so
   Themenfeldern ansehen, die Formulierungen der rankenden Seiten und der verwandten
   Suchanfragen auswerten, daraus die Phrasenliste bilden. Ohne angebundenes
   Keyword-Tool gibt es keine Suchvolumina – das wird als Lücke benannt, nicht
-  erfunden.
+  erfunden. **Schritt 2a läuft hier vor dem Gliederungsentwurf**, nicht nachträglich:
+  Die Phrasenliste der rankenden Seiten ist die Liste ihres Publikums, nicht die der
+  eigenen Käufer.
 - **Schritt 2 bleibt**, aber als Schreibvorgabe gelesen: Die Regelwerke 10 bis 14
   sagen genauso, wie ein Text entstehen soll, wie sie sagen, woran ein bestehender
   scheitert.
@@ -110,7 +114,8 @@ Ablauf:
 - **Schritt 0** darf aus dem Bestand beantwortet werden (siehe „Ableiten statt fragen"
   oben), nicht abfragen, was die Seite und ihre Schwesterseiten schon beantworten.
 - **Schritt 1 und 2 wie im Audit**, einschließlich der getrennten Prüfung des
-  Antwortkopfes.
+  Antwortkopfes und einschließlich **Schritt 2a**, bevor Abschnitte umgestellt, ergänzt
+  oder gestrichen werden.
 - **Schritt 3 und 4** schrumpfen auf eine kurze Liste der Befunde, die nicht im Text
   liegen und deshalb nicht mit umgesetzt werden (Technik, Ladezeit, fehlende Seiten), als
   offene Punkte für den Abschluss.
@@ -167,6 +172,29 @@ Kriterium (z. B. "robots.txt korrekt konfiguriert", nicht nur "Kategorie A: 🟢
 Punkte fließen in Schritt 7 in den PDF-Abschnitt "Was bereits gut läuft" ein – wie bei den
 Mängeln gilt: nur tatsächlich beobachtete Fakten, keine pauschalen Standardsätze ohne Bezug zur
 analysierten Seite.
+
+### Schritt 2a – Käufer-Abgleich der Suchintention (verpflichtend, vor jeder Abschnittsplanung)
+
+Gilt in allen drei Modi: nach der Keyword- und Intentionsarbeit, **vor** der Abschnitts- oder
+Gliederungsplanung. Eine Platzierung belegt, dass ein Inhalt zu einer Suchanfrage passt, nie,
+dass die Suchenden die eigenen Käufer sind – wer die vorderen Plätze abschreibt, übernimmt mit
+ihnen deren Publikum. Vier Prüfungen, Ergebnis je Punkt in einem Satz festhalten und in Schritt 8
+als Annahme nennen, wo es eine ist (Regelwerk: R-CONTENT-025 bis R-CONTENT-029):
+
+1. **Wer kauft hier, und was weiß diese Person schon?** Ein Satz, vor der Keyword-Auswahl. Bei
+   Fachpublikum fällt die gesamte Erklärebene als Zielinhalt weg, auch wenn erklärende Beiträge
+   die vorderen Plätze belegen.
+2. **Intentionsdaten je Suchbegriff auswerten, nicht je Thema.** Ein hoher informationaler Anteil
+   am Oberbegriff sagt nichts über die Longtails darunter.
+3. **Drei Cluster gezielt suchen**, die bei Fachpublikum die Käufer tragen und bei reiner
+   Oberbegriff-Recherche durchfallen: Typen-, Modell- und Baureihenbezeichnungen; Pflicht-, Norm-
+   und Fristenbegriffe; Symptom- und Störungsformulierungen.
+4. **Erklärende Abschnitte nur mit Begründung.** Sonst das Thema in die Form bringen, in der die
+   Zielperson sucht. Wird ein Erklärabschnitt umgebaut, die Fachbegriffe aus der Termanalyse in
+   die neuen Abschnitte übernehmen und danach gegenzählen.
+
+Ohne angebundenes Keyword-Tool liegen Suchvolumen und Intentionsanteile nicht vor. Dann wird das
+als Lücke benannt (Schritt 8) und der Abgleich qualitativ geführt – nicht mit geschätzten Zahlen.
 
 ### Schritt 3 – Kompakter Analyse-Report
 
